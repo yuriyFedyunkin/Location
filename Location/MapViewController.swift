@@ -25,13 +25,20 @@ final class MapViewController: UIViewController {
         view.addSubview(mapView)
         mapView.frame = view.bounds
         
-        let navBarButton = UIBarButtonItem(
-            title: "Track",
+        let startTrackButton = UIBarButtonItem(
+            title: "Start Track",
             style: .done,
             target: self,
             action: #selector(trackLocation))
+        
+        let stopTrackButton = UIBarButtonItem(
+            title: "Stop Track",
+            style: .plain,
+            target: self,
+            action: #selector(stopTracking))
     
-        navigationItem.rightBarButtonItem = navBarButton
+        navigationItem.rightBarButtonItem = startTrackButton
+        navigationItem.leftBarButtonItem = stopTrackButton
     }
     
     private func configureLocationManager() {
@@ -54,6 +61,10 @@ final class MapViewController: UIViewController {
             locationManager?.startUpdatingLocation()
             isTracking = true
         }
+    }
+    
+    @objc private func stopTracking() {
+        
     }
 }
 
