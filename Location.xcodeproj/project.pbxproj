@@ -85,7 +85,6 @@
 				D913475B797B00890269AA45 /* Pods-Location.debug.xcconfig */,
 				3DADEF39C8C57E051071B5E8 /* Pods-Location.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -350,6 +349,8 @@
 				DEVELOPMENT_TEAM = YPX74RZ95A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Location/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Track your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Uses current location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -381,6 +382,8 @@
 				DEVELOPMENT_TEAM = YPX74RZ95A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Location/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Track your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Uses current location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;

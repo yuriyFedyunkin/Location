@@ -45,8 +45,12 @@ final class MapViewController: UIViewController {
     
     private func configureLocationManager() {
         locationManager = CLLocationManager()
-        locationManager?.requestWhenInUseAuthorization()
         locationManager?.delegate = self
+        locationManager?.allowsBackgroundLocationUpdates = true
+        locationManager?.pausesLocationUpdatesAutomatically = false
+        locationManager?.startMonitoringSignificantLocationChanges()
+        locationManager?.showsBackgroundLocationIndicator = true
+        locationManager?.requestAlwaysAuthorization()
     }
     
     private func addMarker(at coordinate: CLLocationCoordinate2D) {
@@ -92,6 +96,8 @@ extension MapViewController: CLLocationManagerDelegate {
         let cameraPosition = GMSCameraPosition(target: location.coordinate, zoom: 15)
         mapView.camera = cameraPosition
         addPointToTrack(at: location.coordinate)
+        
+        print(locations.last)
     }
 }
 
