@@ -17,6 +17,8 @@ final class MapViewController: UIViewController {
     private var locationManager: CLLocationManager?
     private var isTracking: Bool = false
     
+    private var savedCoord: [CLLocationCoordinate2D] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -74,18 +76,23 @@ final class MapViewController: UIViewController {
     }
     
     @objc private func startTracking() {
-        if isTracking {
-            locationManager?.stopUpdatingLocation()
-            isTracking = false
-        } else {
-            locationManager?.startUpdatingLocation()
-            isTracking = true
-            startNewTrack()
-        }
+        guard !isTracking else { return }
+        locationManager?.startUpdatingLocation()
+        isTracking = true
+        startNewTrack()
+        
     }
     
     @objc private func stopTracking() {
+        guard isTracking, let path = path
+        else { return }
+        locationManager?.stopUpdatingLocation()
+        isTracking = false
         
+        for i in 0...path.count() {
+            savedCoord.append(path.coordinate(at: i))
+            // TODO: Save coordinates to DB
+        }
     }
 }
 
@@ -96,8 +103,6 @@ extension MapViewController: CLLocationManagerDelegate {
         let cameraPosition = GMSCameraPosition(target: location.coordinate, zoom: 15)
         mapView.camera = cameraPosition
         addPointToTrack(at: location.coordinate)
-        
-        print(locations.last)
     }
 }
 
@@ -110,10 +115,10 @@ extension MapViewController: CLLocationManagerDelegate {
  2. Добавить кнопки «Начать новый трек» и «Закончить трек».
 
  3. При нажатии на «Начать новый трек»:
-
  a. Запускается слежение.
  b. Создаётся новая линия на карте или заменяется предыдущая.
  c. При получении новой точки она добавляется в маршрут.
+ 
  4. Добавить в приложение базу данных Realm.
 
  5. При нажатии на «Закончить трек»:
