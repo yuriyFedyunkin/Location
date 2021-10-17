@@ -10,6 +10,8 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
     
+    var viewModel: LoginViewModel!
+    
     private let loginTextField = UITextField()
     private let passwordTextField = UITextField()
     private let registerButton = UIButton()
@@ -72,8 +74,9 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func loginTap() {
-
-        print("Login")
+        viewModel.loginButtonTapped(
+            login: loginTextField.text,
+            password: passwordTextField.text)
     }
 }
 
