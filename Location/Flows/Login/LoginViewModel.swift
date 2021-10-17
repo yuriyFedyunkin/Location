@@ -5,12 +5,12 @@
 //  Created by Yuriy Fedyunkin on 17.10.2021.
 //
 
-import Foundation
 import UIKit
 
 protocol LoginViewModel: AnyObject {
     var router: LoginRouter { get }
     func loginButtonTapped(login: String?, password: String?)
+    func showRegistration()
 }
 
 final class LoginViewModelImpl: NSObject, LoginViewModel {
@@ -37,6 +37,10 @@ final class LoginViewModelImpl: NSObject, LoginViewModel {
         } else {
             router.showAlert(.loginError)
         }
+    }
+    
+    func showRegistration() {
+        router.showRegistration()
     }
 }
 

@@ -13,6 +13,8 @@ protocol RegistrationPresentableRouter: BaseRouter {
 
 extension RegistrationPresentableRouter {
     func showRegistration() {
-        
+        let vc = RegistrationViewController()
+        RegistrationModuleBuilder.configure(with: vc)
+        show(viewController: vc)
     }
 }

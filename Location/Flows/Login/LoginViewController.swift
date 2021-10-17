@@ -14,8 +14,8 @@ class LoginViewController: UIViewController {
     
     private let loginTextField = UITextField()
     private let passwordTextField = UITextField()
-    var registerButton = UIButton()
-    let loginButton = UIButton()
+    private let registerButton = UIButton()
+    private let loginButton = UIButton()
     
     private let appearance = Appearance()
     
@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         setupViews()
     }
 
-    func setupViews() {
+    private func setupViews() {
         view.backgroundColor = .blue
         navigationController?.navigationBar.prefersLargeTitles = true
         title = appearance.title
@@ -64,6 +64,7 @@ class LoginViewController: UIViewController {
         }
         
         registerButton.setTitle(appearance.register, for: .normal)
+        registerButton.addTarget(self, action: #selector(registerTap), for: .touchUpInside)
         view.addSubview(registerButton)
         registerButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(appearance.inset)
@@ -78,13 +79,17 @@ class LoginViewController: UIViewController {
             login: loginTextField.text,
             password: passwordTextField.text)
     }
+    
+    @objc private func registerTap() {
+        viewModel.showRegistration()
+    }
 }
 
 extension LoginViewController {
     struct Appearance {
         let inset: CGFloat = 16
         let fieldHeight: CGFloat = 30
-        let cornerRadius: CGFloat = 15
+        let cornerRadius: CGFloat = 6
         let loginPlaceholder = "Login"
         let passwordPlaceholder = "Password"
         let title = "Location App"

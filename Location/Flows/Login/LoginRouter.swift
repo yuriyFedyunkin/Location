@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol LoginRouter: BaseRouter {
+protocol LoginRouter: RegistrationPresentableRouter {
     func showAlert(_ alert: LoginRouterImpl.LoginAlert)
 }
 

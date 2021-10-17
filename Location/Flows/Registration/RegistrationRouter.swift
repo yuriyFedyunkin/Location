@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol RegistrationRouter: BaseRouter {}
+
+final class RegistrationRouterImpl: BaseRouterImpl, RegistrationRouter {}
