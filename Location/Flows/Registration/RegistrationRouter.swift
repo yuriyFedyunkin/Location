@@ -5,8 +5,20 @@
 //  Created by Yuriy Fedyunkin on 17.10.2021.
 //
 
-import Foundation
+import UIKit
 
-protocol RegistrationRouter: BaseRouter {}
+protocol RegistrationRouter: BaseRouter {
+    func showEmptyAlert()
+}
 
-final class RegistrationRouterImpl: BaseRouterImpl, RegistrationRouter {}
+final class RegistrationRouterImpl: BaseRouterImpl, RegistrationRouter {
+    func showEmptyAlert() {
+        let ac = UIAlertController(
+            title: "Ошибка",
+            message: "Все поля должны быть заполнены",
+            preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ок", style: .cancel)
+        ac.addAction(action)
+        present(ac)
+    }
+}

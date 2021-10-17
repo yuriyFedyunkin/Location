@@ -63,7 +63,9 @@ final class RegistrationViewController: UIViewController {
     }
     
     @objc private func registerTap() {
-        print("TAP")
+        viewModel.register(
+            login: loginTextField.text,
+            password: passwordTextField.text)
     }
 }
 

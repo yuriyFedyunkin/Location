@@ -21,7 +21,7 @@ final class UsersDBImpl: UsersDB {
         do {
             print(db?.configuration.fileURL) // left for DB link tracing
             db?.beginWrite()
-            db?.add(user, update: .all)
+            db?.add(user, update: .modified)
             try db?.commitWrite()
         } catch {
             print(error)

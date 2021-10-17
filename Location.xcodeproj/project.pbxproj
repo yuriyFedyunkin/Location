@@ -158,6 +158,14 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		793DC957271C936300640FA2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				797CD3572710353A005CD514 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		797CD34227103537005CD514 = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +193,7 @@
 				793DC93B271C71C600640FA2 /* Extensions */,
 				793DC940271C7BE600640FA2 /* Core */,
 				793DC932271C60AC00640FA2 /* Helpers */,
-				797CD3572710353A005CD514 /* Assets.xcassets */,
+				793DC957271C936300640FA2 /* Resources */,
 			);
 			path = Location;
 			sourceTree = "<group>";

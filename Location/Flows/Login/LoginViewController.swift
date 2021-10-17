@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
             make.bottom.equalTo(passwordTextField.snp.top).inset(-appearance.inset)
         }
         
-        loginButton.setTitle(appearance.loginPlaceholder, for: .normal)
+        loginButton.setTitle(appearance.enter, for: .normal)
         loginButton.layer.cornerRadius = appearance.buttonSize.height / 2
         loginButton.backgroundColor = .black
         loginButton.addTarget(self, action: #selector(loginTap), for: .touchUpInside)
@@ -94,6 +94,7 @@ extension LoginViewController {
         let passwordPlaceholder = "Password"
         let title = "Location App"
         let buttonSize = CGSize(width: 150, height: 40)
+        let enter = "Войти"
         let register = "Зарегистрироваться"
     }
 }
