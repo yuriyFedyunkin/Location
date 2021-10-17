@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1B5EE690F7C3D716FE6AAA4F /* Pods_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB366FA1BBC089C50FCFEB41 /* Pods_Location.framework */; };
+		793DC931271C607A00640FA2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC930271C607A00640FA2 /* LoginViewController.swift */; };
+		793DC934271C60D000640FA2 /* UsersDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC933271C60D000640FA2 /* UsersDB.swift */; };
+		793DC937271C611D00640FA2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC936271C611D00640FA2 /* User.swift */; };
 		797CD34F27103537005CD514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD34E27103537005CD514 /* AppDelegate.swift */; };
 		797CD35127103537005CD514 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD35027103537005CD514 /* SceneDelegate.swift */; };
 		797CD35327103537005CD514 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD35227103537005CD514 /* MapViewController.swift */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		3DADEF39C8C57E051071B5E8 /* Pods-Location.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location.release.xcconfig"; path = "Target Support Files/Pods-Location/Pods-Location.release.xcconfig"; sourceTree = "<group>"; };
+		793DC930271C607A00640FA2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		793DC933271C60D000640FA2 /* UsersDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDB.swift; sourceTree = "<group>"; };
+		793DC936271C611D00640FA2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		797CD34B27103537005CD514 /* Location.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		797CD34E27103537005CD514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		797CD35027103537005CD514 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +54,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		793DC92E271C5E2500640FA2 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				797CD35227103537005CD514 /* MapViewController.swift */,
+				793DC930271C607A00640FA2 /* LoginViewController.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		793DC92F271C5E2F00640FA2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				797CD34E27103537005CD514 /* AppDelegate.swift */,
+				797CD35027103537005CD514 /* SceneDelegate.swift */,
+				797CD3592710353A005CD514 /* LaunchScreen.storyboard */,
+				797CD35C2710353A005CD514 /* Info.plist */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		793DC932271C60AC00640FA2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				793DC933271C60D000640FA2 /* UsersDB.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		793DC935271C610E00640FA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				793DC936271C611D00640FA2 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		797CD34227103537005CD514 = {
 			isa = PBXGroup;
 			children = (
@@ -69,12 +111,11 @@
 		797CD34D27103537005CD514 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				797CD34E27103537005CD514 /* AppDelegate.swift */,
-				797CD35027103537005CD514 /* SceneDelegate.swift */,
-				797CD35227103537005CD514 /* MapViewController.swift */,
+				793DC92F271C5E2F00640FA2 /* Common */,
+				793DC92E271C5E2500640FA2 /* Flows */,
+				793DC935271C610E00640FA2 /* Models */,
+				793DC932271C60AC00640FA2 /* Helpers */,
 				797CD3572710353A005CD514 /* Assets.xcassets */,
-				797CD3592710353A005CD514 /* LaunchScreen.storyboard */,
-				797CD35C2710353A005CD514 /* Info.plist */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -85,7 +126,6 @@
 				D913475B797B00890269AA45 /* Pods-Location.debug.xcconfig */,
 				3DADEF39C8C57E051071B5E8 /* Pods-Location.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -101,6 +141,7 @@
 				797CD34827103537005CD514 /* Frameworks */,
 				797CD34927103537005CD514 /* Resources */,
 				825086C4755DF20A4643A102 /* [CP] Copy Pods Resources */,
+				41F5646132369F7BFB3030D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,6 +198,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		41F5646132369F7BFB3030D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Location/Pods-Location-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Location/Pods-Location-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Location/Pods-Location-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		825086C4755DF20A4643A102 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,9 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793DC931271C607A00640FA2 /* LoginViewController.swift in Sources */,
 				797CD35327103537005CD514 /* MapViewController.swift in Sources */,
+				793DC937271C611D00640FA2 /* User.swift in Sources */,
 				797CD34F27103537005CD514 /* AppDelegate.swift in Sources */,
 				797CD35127103537005CD514 /* SceneDelegate.swift in Sources */,
+				793DC934271C60D000640FA2 /* UsersDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +410,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YPX74RZ95A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Location/Info.plist;
+				INFOPLIST_FILE = Location/Common/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -380,7 +441,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YPX74RZ95A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Location/Info.plist;
+				INFOPLIST_FILE = Location/Common/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
