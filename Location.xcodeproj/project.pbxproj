@@ -11,6 +11,7 @@
 		793DC931271C607A00640FA2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC930271C607A00640FA2 /* LoginViewController.swift */; };
 		793DC934271C60D000640FA2 /* UsersDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC933271C60D000640FA2 /* UsersDB.swift */; };
 		793DC937271C611D00640FA2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC936271C611D00640FA2 /* User.swift */; };
+		793DC93A271C6B9E00640FA2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC939271C6B9E00640FA2 /* LoginViewModel.swift */; };
 		797CD34F27103537005CD514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD34E27103537005CD514 /* AppDelegate.swift */; };
 		797CD35127103537005CD514 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD35027103537005CD514 /* SceneDelegate.swift */; };
 		797CD35327103537005CD514 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD35227103537005CD514 /* MapViewController.swift */; };
@@ -23,6 +24,7 @@
 		793DC930271C607A00640FA2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		793DC933271C60D000640FA2 /* UsersDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDB.swift; sourceTree = "<group>"; };
 		793DC936271C611D00640FA2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		793DC939271C6B9E00640FA2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		797CD34B27103537005CD514 /* Location.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		797CD34E27103537005CD514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		797CD35027103537005CD514 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,8 +59,8 @@
 		793DC92E271C5E2500640FA2 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				793DC938271C6B8900640FA2 /* Login */,
 				797CD35227103537005CD514 /* MapViewController.swift */,
-				793DC930271C607A00640FA2 /* LoginViewController.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -88,6 +90,15 @@
 				793DC936271C611D00640FA2 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		793DC938271C6B8900640FA2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				793DC930271C607A00640FA2 /* LoginViewController.swift */,
+				793DC939271C6B9E00640FA2 /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		797CD34227103537005CD514 = {
@@ -267,6 +278,7 @@
 				797CD34F27103537005CD514 /* AppDelegate.swift in Sources */,
 				797CD35127103537005CD514 /* SceneDelegate.swift in Sources */,
 				793DC934271C60D000640FA2 /* UsersDB.swift in Sources */,
+				793DC93A271C6B9E00640FA2 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

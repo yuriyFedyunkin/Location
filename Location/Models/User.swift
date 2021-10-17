@@ -8,10 +8,15 @@
 import RealmSwift
 
 final class User: Object {
-    @objc dynamic var login: String
-    @objc dynamic var password: String
+    @objc dynamic var login: String = ""
+    @objc dynamic var password: String = ""
+    
+    override init() {
+        super.init()
+    }
     
     init(login: String, password: String) {
+        super.init()
         self.login = login
         self.password = password
     }
