@@ -33,7 +33,7 @@ final class LoginViewModelImpl: NSObject, LoginViewModel {
         
         if let user = dataBase.read(login: login),
            password == user.password {
-            print("Вход выполнен")
+            router.showMap()
         } else {
             router.showAlert(.loginError)
         }
@@ -42,8 +42,4 @@ final class LoginViewModelImpl: NSObject, LoginViewModel {
     func showRegistration() {
         router.showRegistration()
     }
-}
-
-extension LoginViewModelImpl: UITextFieldDelegate {
-    
 }

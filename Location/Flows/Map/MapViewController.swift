@@ -30,8 +30,15 @@ final class MapViewController: UIViewController {
             style: .done,
             target: self,
             action: #selector(trackLocation))
+        
+        let exitButton = UIBarButtonItem(
+            title: "Exit",
+            style: .plain,
+            target: self,
+            action: #selector(exitMap))
     
         navigationItem.rightBarButtonItem = navBarButton
+        navigationItem.leftBarButtonItem = exitButton
     }
     
     private func configureLocationManager() {
@@ -54,6 +61,10 @@ final class MapViewController: UIViewController {
             locationManager?.startUpdatingLocation()
             isTracking = true
         }
+    }
+    
+    @objc private func exitMap() {
+        navigationController?.dismiss(animated: true)
     }
 }
 
