@@ -8,14 +8,14 @@
 import UIKit
 import SnapKit
 
-final class LoginViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     var viewModel: LoginViewModel!
     
     private let loginTextField = UITextField()
     private let passwordTextField = UITextField()
-    private let registerButton = UIButton()
-    private let loginButton = UIButton()
+    var registerButton = UIButton()
+    let loginButton = UIButton()
     
     private let appearance = Appearance()
     
@@ -24,7 +24,7 @@ final class LoginViewController: UIViewController {
         setupViews()
     }
 
-    private func setupViews() {
+    func setupViews() {
         view.backgroundColor = .blue
         navigationController?.navigationBar.prefersLargeTitles = true
         title = appearance.title

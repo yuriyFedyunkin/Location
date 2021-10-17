@@ -7,7 +7,7 @@
 
 import UIKit
 
-@objc protocol BaseRouter: AnyObject {
+protocol BaseRouter: AnyObject {
     var baseViewController: UIViewController? { get set }
     init(viewController: UIViewController)
 }
