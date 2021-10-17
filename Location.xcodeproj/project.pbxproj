@@ -20,6 +20,7 @@
 		793DC94B271C846900640FA2 /* RegistrationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC94A271C846900640FA2 /* RegistrationModuleBuilder.swift */; };
 		793DC94D271C847500640FA2 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC94C271C847500640FA2 /* RegistrationRouter.swift */; };
 		793DC94F271C856500640FA2 /* RegistrationPresentableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC94E271C856500640FA2 /* RegistrationPresentableRouter.swift */; };
+		793DC952271C8B0300640FA2 /* MapPresentableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC951271C8B0300640FA2 /* MapPresentableRouter.swift */; };
 		797CD34F27103537005CD514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD34E27103537005CD514 /* AppDelegate.swift */; };
 		797CD35127103537005CD514 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD35027103537005CD514 /* SceneDelegate.swift */; };
 		797CD35327103537005CD514 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD35227103537005CD514 /* MapViewController.swift */; };
@@ -41,6 +42,7 @@
 		793DC94A271C846900640FA2 /* RegistrationModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModuleBuilder.swift; sourceTree = "<group>"; };
 		793DC94C271C847500640FA2 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		793DC94E271C856500640FA2 /* RegistrationPresentableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresentableRouter.swift; sourceTree = "<group>"; };
+		793DC951271C8B0300640FA2 /* MapPresentableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresentableRouter.swift; sourceTree = "<group>"; };
 		797CD34B27103537005CD514 /* Location.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		797CD34E27103537005CD514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		797CD35027103537005CD514 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +79,7 @@
 			children = (
 				793DC938271C6B8900640FA2 /* Login */,
 				793DC945271C842400640FA2 /* Registration */,
-				797CD35227103537005CD514 /* MapViewController.swift */,
+				793DC950271C8ADB00640FA2 /* Map */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -145,6 +147,15 @@
 				793DC94E271C856500640FA2 /* RegistrationPresentableRouter.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		793DC950271C8ADB00640FA2 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				797CD35227103537005CD514 /* MapViewController.swift */,
+				793DC951271C8B0300640FA2 /* MapPresentableRouter.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		797CD34227103537005CD514 = {
@@ -329,6 +340,7 @@
 				793DC94D271C847500640FA2 /* RegistrationRouter.swift in Sources */,
 				797CD35327103537005CD514 /* MapViewController.swift in Sources */,
 				793DC937271C611D00640FA2 /* User.swift in Sources */,
+				793DC952271C8B0300640FA2 /* MapPresentableRouter.swift in Sources */,
 				797CD34F27103537005CD514 /* AppDelegate.swift in Sources */,
 				797CD35127103537005CD514 /* SceneDelegate.swift in Sources */,
 				793DC934271C60D000640FA2 /* UsersDB.swift in Sources */,
