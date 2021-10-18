@@ -26,6 +26,7 @@
 		797CD35327103537005CD514 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD35227103537005CD514 /* MapViewController.swift */; };
 		797CD3582710353A005CD514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797CD3572710353A005CD514 /* Assets.xcassets */; };
 		797CD35B2710353A005CD514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797CD3592710353A005CD514 /* LaunchScreen.storyboard */; };
+		79B426D1271E13450026E257 /* BlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B426D0271E13450026E257 /* BlockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		797CD3572710353A005CD514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		797CD35A2710353A005CD514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		797CD35C2710353A005CD514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79B426D0271E13450026E257 /* BlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockViewController.swift; sourceTree = "<group>"; };
 		D913475B797B00890269AA45 /* Pods-Location.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location.debug.xcconfig"; path = "Target Support Files/Pods-Location/Pods-Location.debug.xcconfig"; sourceTree = "<group>"; };
 		DB366FA1BBC089C50FCFEB41 /* Pods_Location.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 				797CD35027103537005CD514 /* SceneDelegate.swift */,
 				797CD3592710353A005CD514 /* LaunchScreen.storyboard */,
 				797CD35C2710353A005CD514 /* Info.plist */,
+				79B426D0271E13450026E257 /* BlockViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				793DC952271C8B0300640FA2 /* MapPresentableRouter.swift in Sources */,
 				797CD34F27103537005CD514 /* AppDelegate.swift in Sources */,
 				797CD35127103537005CD514 /* SceneDelegate.swift in Sources */,
+				79B426D1271E13450026E257 /* BlockViewController.swift in Sources */,
 				793DC934271C60D000640FA2 /* UsersDB.swift in Sources */,
 				793DC944271C7D0400640FA2 /* LoginRouter.swift in Sources */,
 				793DC94B271C846900640FA2 /* RegistrationModuleBuilder.swift in Sources */,
