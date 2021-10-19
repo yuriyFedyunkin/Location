@@ -5,7 +5,8 @@
 //  Created by Yuriy Fedyunkin on 17.10.2021.
 //
 
-import UIKit
+import RxCocoa
+import RxSwift
 import SnapKit
 
 class LoginViewController: UIViewController {
@@ -18,10 +19,12 @@ class LoginViewController: UIViewController {
     private let loginButton = UIButton()
     
     private let appearance = Appearance()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupBindings()
     }
 
     private func setupViews() {
@@ -57,7 +60,6 @@ class LoginViewController: UIViewController {
         loginButton.setTitle(appearance.enter, for: .normal)
         loginButton.layer.cornerRadius = appearance.buttonSize.height / 2
         loginButton.backgroundColor = .black
-        loginButton.addTarget(self, action: #selector(loginTap), for: .touchUpInside)
         view.addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
             make.size.equalTo(appearance.buttonSize)
@@ -66,7 +68,6 @@ class LoginViewController: UIViewController {
         }
         
         registerButton.setTitle(appearance.register, for: .normal)
-        registerButton.addTarget(self, action: #selector(registerTap), for: .touchUpInside)
         view.addSubview(registerButton)
         registerButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(appearance.inset)
@@ -75,15 +76,33 @@ class LoginViewController: UIViewController {
             make.top.equalTo(loginButton.snp.bottom).offset(appearance.inset)
         }
     }
-    
-    @objc private func loginTap() {
-        viewModel.loginButtonTapped(
-            login: loginTextField.text,
-            password: passwordTextField.text)
-    }
-    
-    @objc private func registerTap() {
-        viewModel.showRegistration()
+
+    private func setupBindings() {
+        loginTextField.rx.text
+            .orEmpty
+            .bind(to: viewModel.loginInput)
+            .disposed(by: disposeBag)
+        
+        passwordTextField.rx.text
+            .orEmpty
+            .bind(to: viewModel.passwordInput)
+            .disposed(by: disposeBag)
+        
+        loginButton.rx.tap
+            .bind(to: viewModel.loginDidTap)
+            .disposed(by: disposeBag)
+        
+        registerButton.rx.tap
+            .bind(to: viewModel.didTapRegistration)
+            .disposed(by: disposeBag)
+        
+        Observable.combineLatest(
+            loginTextField.rx.text.orEmpty,
+            passwordTextField.rx.text.orEmpty)
+            .map { !$0.isEmpty && !$1.isEmpty }
+            .distinctUntilChanged()
+            .bind(to: loginButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 }
 
