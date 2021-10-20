@@ -80,7 +80,6 @@ final class MapViewController: UIViewController {
         locationManager?.startUpdatingLocation()
         isTracking = true
         startNewTrack()
-        
     }
     
     @objc private func stopTracking() {

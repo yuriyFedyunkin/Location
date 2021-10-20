@@ -4,8 +4,10 @@
 <dict>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Track your location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Uses current location</string>
+	<string>Track your location</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
