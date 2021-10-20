@@ -14,7 +14,7 @@ final class RegistrationViewController: UIViewController {
     
     private let loginTextField = UITextField()
     private let passwordTextField = UITextField()
-    private let registerButton = UIButton()
+    private let registerButton = BaseButton()
     
     private let appearance = Appearance()
     private let disposeBag = DisposeBag()
@@ -26,7 +26,7 @@ final class RegistrationViewController: UIViewController {
     }
     
     private func setupViews() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .secondarySystemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         title = appearance.title
         
@@ -97,6 +97,7 @@ extension RegistrationViewController {
         let buttonSize = CGSize(width: 150, height: 40)
         let register = NSAttributedString(
             string: "Зарегистрироваться",
-            attributes: [.font: UIFont.systemFont(ofSize: 12), .foregroundColor: UIColor.white])
+            attributes: [.font: UIFont.systemFont(ofSize: 12),
+                         .foregroundColor: UIColor.white])
     }
 }

@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     private let loginTextField = UITextField()
     private let passwordTextField = UITextField()
     private let registerButton = UIButton()
-    private let loginButton = UIButton()
+    private let loginButton = BaseButton()
     
     private let appearance = Appearance()
     private let disposeBag = DisposeBag()
@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     }
 
     private func setupViews() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .secondarySystemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         title = appearance.title
         
@@ -68,6 +68,7 @@ class LoginViewController: UIViewController {
         }
         
         registerButton.setTitle(appearance.register, for: .normal)
+        registerButton.setTitleColor(.darkGray, for: .normal)
         view.addSubview(registerButton)
         registerButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(appearance.inset)
