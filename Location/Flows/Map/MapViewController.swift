@@ -8,57 +8,83 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import RxSwift
+import RxCocoa
 
 final class MapViewController: UIViewController {
 
     private let mapView = GMSMapView()
     private var route: GMSPolyline?
     private var path: GMSMutablePath?
-    private var locationManager: CLLocationManager?
-    private var isTracking: Bool = false
+    private var locationManager: LocationManager = LocationManagerImpl()
+    private let trackButton = UIBarButtonItem(
+        title: "Start Track",
+        style: .done, target: self,
+        action: nil)
+    private let exitButton = UIBarButtonItem(
+        title: "Exit",
+        style: .plain,
+        target: self,
+        action: nil)
     
+    private var isTracking: Bool = false
     private var savedCoord: [CLLocationCoordinate2D] = []
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        configureLocationManager()
+        setupBindings()
     }
-
+    
     private func setupViews() {
         view.addSubview(mapView)
         mapView.frame = view.bounds
-        
-        let startTrackButton = UIBarButtonItem(
-            title: "Start Track",
-            style: .done,
-            target: self,
-            action: #selector(startTracking))
-        
-        let stopTrackButton = UIBarButtonItem(
-            title: "Stop Track",
-            style: .plain,
-            target: self,
-            action: #selector(stopTracking))
-    
-        navigationItem.rightBarButtonItem = startTrackButton
-        navigationItem.leftBarButtonItem = stopTrackButton
+        navigationItem.rightBarButtonItem = trackButton
+        navigationItem.leftBarButtonItem = exitButton
     }
     
-    private func configureLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.allowsBackgroundLocationUpdates = true
-        locationManager?.pausesLocationUpdatesAutomatically = false
-        locationManager?.startMonitoringSignificantLocationChanges()
-        locationManager?.showsBackgroundLocationIndicator = true
-        locationManager?.requestAlwaysAuthorization()
+    private func setupBindings() {
+        locationManager.authorizationStatus
+            .subscribe(
+                with: self,
+                onNext: { $0.checkAuthorizationStatus(status: $1) })
+            .disposed(by: disposeBag)
+
+        locationManager.location
+            .observe(on: MainScheduler.instance)
+            .subscribe(
+                with: self,
+                onNext: { $0.updateRoute(location: $1) })
+            .disposed(by: disposeBag)
+        
+        trackButton.rx.tap
+            .bind { [weak self] _ in self?.handleTrackButtonTap() }
+            .disposed(by: disposeBag)
+        
+        exitButton.rx.tap
+            .bind { [weak self] _ in self?.exitMap() }
+            .disposed(by: disposeBag)
     }
     
-    private func addMarker(at coordinate: CLLocationCoordinate2D) {
-        let marker = GMSMarker(position: coordinate)
-        marker.icon = GMSMarker.markerImage(with: .green)
-        marker.map = mapView
+    private func checkAuthorizationStatus(status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            locationManager.requestAuthorization()
+        case .restricted, .denied:
+            print("Location access denien")
+        case .authorizedAlways , .authorizedWhenInUse:
+            break
+        @unknown default:
+            break
+        }
+    }
+
+    private func updateRoute(location: CLLocationCoordinate2D) {
+        let position = GMSMutableCameraPosition(target: location, zoom: 16)
+        mapView.animate(to: position)
+        path?.add(location)
+        route?.path = path
     }
     
     private func startNewTrack() {
@@ -75,39 +101,29 @@ final class MapViewController: UIViewController {
         route?.path = path
     }
     
-    @objc private func startTracking() {
-        guard !isTracking else { return }
-        locationManager?.startUpdatingLocation()
-        isTracking = true
-        startNewTrack()
-    }
-    
-    @objc private func stopTracking() {
-        guard isTracking, let path = path
-        else { return }
-        locationManager?.stopUpdatingLocation()
-        isTracking = false
-        
-        for i in 0...path.count() {
-            savedCoord.append(path.coordinate(at: i))
-            // TODO: Save coordinates to DB
+    private func handleTrackButtonTap() {
+        if isTracking,
+        let path = path {
+            locationManager.stoptUpdateLocation()
+            isTracking = false
+
+            for i in 0...path.count() {
+                savedCoord.append(path.coordinate(at: i))
+                // TODO: Save coordinates to DB
+            }
+        } else if !isTracking {
+            locationManager.startUpdateLocation()
+            isTracking = true
+            startNewTrack()
         }
+        trackButton.title = isTracking ? "Stop track" : "Start track"
     }
     
-    @objc private func exitMap() {
+    private func exitMap() {
         navigationController?.dismiss(animated: true)
     }
 }
 
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        
-        let cameraPosition = GMSCameraPosition(target: location.coordinate, zoom: 15)
-        mapView.camera = cameraPosition
-        addPointToTrack(at: location.coordinate)
-    }
-}
 
 // TODO: Delete
 /*
