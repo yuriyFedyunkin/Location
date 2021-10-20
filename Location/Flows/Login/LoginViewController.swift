@@ -78,30 +78,25 @@ class LoginViewController: UIViewController {
     }
 
     private func setupBindings() {
-        loginTextField.rx.text
-            .orEmpty
-            .bind(to: viewModel.loginInput)
-            .disposed(by: disposeBag)
+        let userObservable =
+        Observable.combineLatest(
+            loginTextField.rx.text.orEmpty,
+            passwordTextField.rx.text.orEmpty)
+            .share(replay: 1, scope: .whileConnected)
         
-        passwordTextField.rx.text
-            .orEmpty
-            .bind(to: viewModel.passwordInput)
+        userObservable
+            .map { !$0.isEmpty && !$1.isEmpty }
+            .distinctUntilChanged()
+            .bind(to: loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
         loginButton.rx.tap
-            .bind(to: viewModel.loginDidTap)
+            .withLatestFrom(userObservable)
+            .bind(to: viewModel.userInput)
             .disposed(by: disposeBag)
         
         registerButton.rx.tap
             .bind(to: viewModel.didTapRegistration)
-            .disposed(by: disposeBag)
-        
-        Observable.combineLatest(
-            loginTextField.rx.text.orEmpty,
-            passwordTextField.rx.text.orEmpty)
-            .map { !$0.isEmpty && !$1.isEmpty }
-            .distinctUntilChanged()
-            .bind(to: loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
     }
 }

@@ -14,9 +14,11 @@ protocol RegistrationViewModel: AnyObject {
 
 final class RegistrationViewModelImpl: NSObject, RegistrationViewModel {
     
+    // MARK: RegistrationViewModel protocol
     let router: RegistrationRouter
     let userInput: AnyObserver<(String, String)>
     
+    // MARK: Local properties
     private let dataBase: UsersDB
     private let disposeBag = DisposeBag()
     private var registerDidTap: Binder<User> {
@@ -37,7 +39,6 @@ final class RegistrationViewModelImpl: NSObject, RegistrationViewModel {
         super.init()
         
         userInputSubject
-            .observe(on: MainScheduler.instance)
             .map { User(login: $0.lowercased(), password: $1.lowercased()) }
             .bind(to: registerDidTap)
             .disposed(by: disposeBag)
