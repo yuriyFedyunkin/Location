@@ -47,11 +47,11 @@ final class LoginViewModelImpl: NSObject, LoginViewModel {
         passwordInput = passwordInputSubject.asObserver()
         super.init()
         
-        let input = Observable.combineLatest(loginInputSubject, passwordInputSubject)
+        let inputObservable = Observable.combineLatest(loginInputSubject, passwordInputSubject)
         
         loginDidTapSubject
             .observe(on: MainScheduler.instance)
-            .withLatestFrom(input)
+            .withLatestFrom(inputObservable)
             .bind(with: self) { vm, input in
                 vm.loginButtonTapped(login: input.0, password: input.1)
             }

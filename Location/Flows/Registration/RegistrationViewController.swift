@@ -5,7 +5,8 @@
 //  Created by Yuriy Fedyunkin on 17.10.2021.
 //
 
-import UIKit
+import RxSwift
+import RxCocoa
 
 final class RegistrationViewController: UIViewController {
     
@@ -16,10 +17,12 @@ final class RegistrationViewController: UIViewController {
     private let registerButton = UIButton()
     
     private let appearance = Appearance()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupBindings()
     }
     
     private func setupViews() {
@@ -55,7 +58,6 @@ final class RegistrationViewController: UIViewController {
         registerButton.setAttributedTitle(appearance.register, for: .normal)
         registerButton.layer.cornerRadius = appearance.buttonSize.height / 2
         registerButton.backgroundColor = .black
-        registerButton.addTarget(self, action: #selector(registerTap), for: .touchUpInside)
         view.addSubview(registerButton)
         registerButton.snp.makeConstraints { make in
             make.size.equalTo(appearance.buttonSize)
@@ -63,11 +65,24 @@ final class RegistrationViewController: UIViewController {
             make.top.equalTo(passwordTextField.snp.bottom).offset(appearance.inset)
         }
     }
-    
-    @objc private func registerTap() {
-        viewModel.register(
-            login: loginTextField.text,
-            password: passwordTextField.text)
+
+    private func setupBindings() {
+        let userObservable =
+        Observable.combineLatest(
+            loginTextField.rx.text.orEmpty,
+            passwordTextField.rx.text.orEmpty)
+            .share(replay: 1, scope: .whileConnected)
+        
+        userObservable
+            .map { !$0.isEmpty && !$1.isEmpty }
+            .distinctUntilChanged()
+            .bind(to: registerButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        registerButton.rx.tap
+            .withLatestFrom(userObservable)
+            .bind(to: viewModel.userInput)
+            .disposed(by: disposeBag)
     }
 }
 
