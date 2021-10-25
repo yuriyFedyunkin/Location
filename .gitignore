@@ -17,6 +17,10 @@ Pods/
 
 ## User settings
 xcuserdata/
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+Location.xcworkspace/xcuserdata/yuriyfedyunkin.xcuserdatad/UserInterfaceState.xcuserstate
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint

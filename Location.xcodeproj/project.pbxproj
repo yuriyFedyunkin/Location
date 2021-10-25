@@ -12,7 +12,7 @@
 		793DC934271C60D000640FA2 /* UsersDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC933271C60D000640FA2 /* UsersDB.swift */; };
 		793DC937271C611D00640FA2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC936271C611D00640FA2 /* User.swift */; };
 		793DC93A271C6B9E00640FA2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC939271C6B9E00640FA2 /* LoginViewModel.swift */; };
-		793DC93F271C7A1300640FA2 /* LoginModuleBuidler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC93E271C7A1300640FA2 /* LoginModuleBuidler.swift */; };
+		793DC93F271C7A1300640FA2 /* LoginModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC93E271C7A1300640FA2 /* LoginModuleBuilder.swift */; };
 		793DC942271C7BF700640FA2 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC941271C7BF700640FA2 /* BaseRouter.swift */; };
 		793DC944271C7D0400640FA2 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC943271C7D0400640FA2 /* LoginRouter.swift */; };
 		793DC947271C844600640FA2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC946271C844600640FA2 /* RegistrationViewController.swift */; };
@@ -37,7 +37,7 @@
 		793DC933271C60D000640FA2 /* UsersDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDB.swift; sourceTree = "<group>"; };
 		793DC936271C611D00640FA2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		793DC939271C6B9E00640FA2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		793DC93E271C7A1300640FA2 /* LoginModuleBuidler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleBuidler.swift; sourceTree = "<group>"; };
+		793DC93E271C7A1300640FA2 /* LoginModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleBuilder.swift; sourceTree = "<group>"; };
 		793DC941271C7BF700640FA2 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		793DC943271C7D0400640FA2 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		793DC946271C844600640FA2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			children = (
 				793DC930271C607A00640FA2 /* LoginViewController.swift */,
 				793DC939271C6B9E00640FA2 /* LoginViewModel.swift */,
-				793DC93E271C7A1300640FA2 /* LoginModuleBuidler.swift */,
+				793DC93E271C7A1300640FA2 /* LoginModuleBuilder.swift */,
 				793DC943271C7D0400640FA2 /* LoginRouter.swift */,
 			);
 			path = Login;
@@ -352,6 +352,7 @@
 				793DC94F271C856500640FA2 /* RegistrationPresentableRouter.swift in Sources */,
 				793DC949271C845400640FA2 /* RegistrationViewModel.swift in Sources */,
 				793DC942271C7BF700640FA2 /* BaseRouter.swift in Sources */,
+				793DC93F271C7A1300640FA2 /* LoginModuleBuilder.swift in Sources */,
 				79519FAD272096C7006B2F00 /* BaseButton.swift in Sources */,
 				793DC93F271C7A1300640FA2 /* LoginModuleBuidler.swift in Sources */,
 				793DC947271C844600640FA2 /* RegistrationViewController.swift in Sources */,
