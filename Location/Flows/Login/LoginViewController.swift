@@ -32,6 +32,7 @@ class LoginViewController: UIViewController {
         passwordTextField.backgroundColor = .white
         passwordTextField.textAlignment = .center
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.autocorrectionType = .no
         passwordTextField.layer.cornerRadius = appearance.cornerRadius
         passwordTextField.placeholder = appearance.passwordPlaceholder
         view.addSubview(passwordTextField)
@@ -44,6 +45,7 @@ class LoginViewController: UIViewController {
         loginTextField.backgroundColor = .white
         loginTextField.layer.cornerRadius = appearance.cornerRadius
         loginTextField.textAlignment = .center
+        loginTextField.autocorrectionType = .no
         loginTextField.placeholder = appearance.loginPlaceholder
         view.addSubview(loginTextField)
         loginTextField.snp.makeConstraints { make in
