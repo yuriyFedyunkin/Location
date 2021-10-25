@@ -94,6 +94,10 @@ final class MapViewController: UIViewController {
             // TODO: Save coordinates to DB
         }
     }
+    
+    @objc private func exitMap() {
+        navigationController?.dismiss(animated: true)
+    }
 }
 
 extension MapViewController: CLLocationManagerDelegate {

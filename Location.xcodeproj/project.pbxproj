@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		1B5EE690F7C3D716FE6AAA4F /* Pods_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB366FA1BBC089C50FCFEB41 /* Pods_Location.framework */; };
+		793DC931271C607A00640FA2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC930271C607A00640FA2 /* LoginViewController.swift */; };
+		793DC934271C60D000640FA2 /* UsersDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC933271C60D000640FA2 /* UsersDB.swift */; };
+		793DC937271C611D00640FA2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC936271C611D00640FA2 /* User.swift */; };
+		793DC93A271C6B9E00640FA2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC939271C6B9E00640FA2 /* LoginViewModel.swift */; };
+		793DC93F271C7A1300640FA2 /* LoginModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC93E271C7A1300640FA2 /* LoginModuleBuilder.swift */; };
+		793DC942271C7BF700640FA2 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC941271C7BF700640FA2 /* BaseRouter.swift */; };
+		793DC944271C7D0400640FA2 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC943271C7D0400640FA2 /* LoginRouter.swift */; };
+		793DC947271C844600640FA2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC946271C844600640FA2 /* RegistrationViewController.swift */; };
+		793DC949271C845400640FA2 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC948271C845400640FA2 /* RegistrationViewModel.swift */; };
+		793DC94B271C846900640FA2 /* RegistrationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC94A271C846900640FA2 /* RegistrationModuleBuilder.swift */; };
+		793DC94D271C847500640FA2 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC94C271C847500640FA2 /* RegistrationRouter.swift */; };
+		793DC94F271C856500640FA2 /* RegistrationPresentableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC94E271C856500640FA2 /* RegistrationPresentableRouter.swift */; };
+		793DC952271C8B0300640FA2 /* MapPresentableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DC951271C8B0300640FA2 /* MapPresentableRouter.swift */; };
 		797CD34F27103537005CD514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD34E27103537005CD514 /* AppDelegate.swift */; };
 		797CD35127103537005CD514 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD35027103537005CD514 /* SceneDelegate.swift */; };
 		797CD35327103537005CD514 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CD35227103537005CD514 /* MapViewController.swift */; };
@@ -17,6 +30,19 @@
 
 /* Begin PBXFileReference section */
 		3DADEF39C8C57E051071B5E8 /* Pods-Location.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location.release.xcconfig"; path = "Target Support Files/Pods-Location/Pods-Location.release.xcconfig"; sourceTree = "<group>"; };
+		793DC930271C607A00640FA2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		793DC933271C60D000640FA2 /* UsersDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDB.swift; sourceTree = "<group>"; };
+		793DC936271C611D00640FA2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		793DC939271C6B9E00640FA2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		793DC93E271C7A1300640FA2 /* LoginModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleBuilder.swift; sourceTree = "<group>"; };
+		793DC941271C7BF700640FA2 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		793DC943271C7D0400640FA2 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		793DC946271C844600640FA2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		793DC948271C845400640FA2 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		793DC94A271C846900640FA2 /* RegistrationModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModuleBuilder.swift; sourceTree = "<group>"; };
+		793DC94C271C847500640FA2 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		793DC94E271C856500640FA2 /* RegistrationPresentableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresentableRouter.swift; sourceTree = "<group>"; };
+		793DC951271C8B0300640FA2 /* MapPresentableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresentableRouter.swift; sourceTree = "<group>"; };
 		797CD34B27103537005CD514 /* Location.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		797CD34E27103537005CD514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		797CD35027103537005CD514 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +74,98 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		793DC92E271C5E2500640FA2 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				793DC938271C6B8900640FA2 /* Login */,
+				793DC945271C842400640FA2 /* Registration */,
+				793DC950271C8ADB00640FA2 /* Map */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		793DC92F271C5E2F00640FA2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				797CD34E27103537005CD514 /* AppDelegate.swift */,
+				797CD35027103537005CD514 /* SceneDelegate.swift */,
+				797CD3592710353A005CD514 /* LaunchScreen.storyboard */,
+				797CD35C2710353A005CD514 /* Info.plist */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		793DC932271C60AC00640FA2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				793DC933271C60D000640FA2 /* UsersDB.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		793DC935271C610E00640FA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				793DC936271C611D00640FA2 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		793DC938271C6B8900640FA2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				793DC930271C607A00640FA2 /* LoginViewController.swift */,
+				793DC939271C6B9E00640FA2 /* LoginViewModel.swift */,
+				793DC93E271C7A1300640FA2 /* LoginModuleBuilder.swift */,
+				793DC943271C7D0400640FA2 /* LoginRouter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		793DC93B271C71C600640FA2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		793DC940271C7BE600640FA2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				793DC941271C7BF700640FA2 /* BaseRouter.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		793DC945271C842400640FA2 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				793DC946271C844600640FA2 /* RegistrationViewController.swift */,
+				793DC948271C845400640FA2 /* RegistrationViewModel.swift */,
+				793DC94A271C846900640FA2 /* RegistrationModuleBuilder.swift */,
+				793DC94C271C847500640FA2 /* RegistrationRouter.swift */,
+				793DC94E271C856500640FA2 /* RegistrationPresentableRouter.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		793DC950271C8ADB00640FA2 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				797CD35227103537005CD514 /* MapViewController.swift */,
+				793DC951271C8B0300640FA2 /* MapPresentableRouter.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		793DC957271C936300640FA2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				797CD3572710353A005CD514 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		797CD34227103537005CD514 = {
 			isa = PBXGroup;
 			children = (
@@ -69,12 +187,13 @@
 		797CD34D27103537005CD514 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				797CD34E27103537005CD514 /* AppDelegate.swift */,
-				797CD35027103537005CD514 /* SceneDelegate.swift */,
-				797CD35227103537005CD514 /* MapViewController.swift */,
-				797CD3572710353A005CD514 /* Assets.xcassets */,
-				797CD3592710353A005CD514 /* LaunchScreen.storyboard */,
-				797CD35C2710353A005CD514 /* Info.plist */,
+				793DC92F271C5E2F00640FA2 /* Common */,
+				793DC92E271C5E2500640FA2 /* Flows */,
+				793DC935271C610E00640FA2 /* Models */,
+				793DC93B271C71C600640FA2 /* Extensions */,
+				793DC940271C7BE600640FA2 /* Core */,
+				793DC932271C60AC00640FA2 /* Helpers */,
+				793DC957271C936300640FA2 /* Resources */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -100,6 +219,7 @@
 				797CD34827103537005CD514 /* Frameworks */,
 				797CD34927103537005CD514 /* Resources */,
 				825086C4755DF20A4643A102 /* [CP] Copy Pods Resources */,
+				41F5646132369F7BFB3030D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +276,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		41F5646132369F7BFB3030D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Location/Pods-Location-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Location/Pods-Location-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Location/Pods-Location-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		825086C4755DF20A4643A102 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,9 +339,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793DC931271C607A00640FA2 /* LoginViewController.swift in Sources */,
+				793DC94F271C856500640FA2 /* RegistrationPresentableRouter.swift in Sources */,
+				793DC949271C845400640FA2 /* RegistrationViewModel.swift in Sources */,
+				793DC942271C7BF700640FA2 /* BaseRouter.swift in Sources */,
+				793DC93F271C7A1300640FA2 /* LoginModuleBuilder.swift in Sources */,
+				793DC947271C844600640FA2 /* RegistrationViewController.swift in Sources */,
+				793DC94D271C847500640FA2 /* RegistrationRouter.swift in Sources */,
 				797CD35327103537005CD514 /* MapViewController.swift in Sources */,
+				793DC937271C611D00640FA2 /* User.swift in Sources */,
+				793DC952271C8B0300640FA2 /* MapPresentableRouter.swift in Sources */,
 				797CD34F27103537005CD514 /* AppDelegate.swift in Sources */,
 				797CD35127103537005CD514 /* SceneDelegate.swift in Sources */,
+				793DC934271C60D000640FA2 /* UsersDB.swift in Sources */,
+				793DC944271C7D0400640FA2 /* LoginRouter.swift in Sources */,
+				793DC94B271C846900640FA2 /* RegistrationModuleBuilder.swift in Sources */,
+				793DC93A271C6B9E00640FA2 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +498,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YPX74RZ95A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Location/Info.plist;
+				INFOPLIST_FILE = Location/Common/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Track your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Uses current location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -381,7 +531,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YPX74RZ95A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Location/Info.plist;
+				INFOPLIST_FILE = Location/Common/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Track your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Uses current location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
