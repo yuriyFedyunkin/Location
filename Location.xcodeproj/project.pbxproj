@@ -29,6 +29,7 @@
 		797CD3582710353A005CD514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797CD3572710353A005CD514 /* Assets.xcassets */; };
 		797CD35B2710353A005CD514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797CD3592710353A005CD514 /* LaunchScreen.storyboard */; };
 		79B426D1271E13450026E257 /* BlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B426D0271E13450026E257 /* BlockViewController.swift */; };
+		79DECBF1272F14F40086185F /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DECBF0272F14F40086185F /* UserNotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		797CD35A2710353A005CD514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		797CD35C2710353A005CD514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79B426D0271E13450026E257 /* BlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockViewController.swift; sourceTree = "<group>"; };
+		79DECBF0272F14F40086185F /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
 		D913475B797B00890269AA45 /* Pods-Location.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location.debug.xcconfig"; path = "Target Support Files/Pods-Location/Pods-Location.debug.xcconfig"; sourceTree = "<group>"; };
 		DB366FA1BBC089C50FCFEB41 /* Pods_Location.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 			children = (
 				793DC933271C60D000640FA2 /* UsersDB.swift */,
 				79519FAE2720A0AA006B2F00 /* LocationManager.swift */,
+				79DECBF0272F14F40086185F /* UserNotificationService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -349,12 +352,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				793DC931271C607A00640FA2 /* LoginViewController.swift in Sources */,
+				79DECBF1272F14F40086185F /* UserNotificationService.swift in Sources */,
 				793DC94F271C856500640FA2 /* RegistrationPresentableRouter.swift in Sources */,
 				793DC949271C845400640FA2 /* RegistrationViewModel.swift in Sources */,
 				793DC942271C7BF700640FA2 /* BaseRouter.swift in Sources */,
 				793DC93F271C7A1300640FA2 /* LoginModuleBuilder.swift in Sources */,
 				79519FAD272096C7006B2F00 /* BaseButton.swift in Sources */,
-				793DC93F271C7A1300640FA2 /* LoginModuleBuidler.swift in Sources */,
+				793DC93F271C7A1300640FA2 /* LoginModuleBuilder.swift in Sources */,
 				793DC947271C844600640FA2 /* RegistrationViewController.swift in Sources */,
 				793DC94D271C847500640FA2 /* RegistrationRouter.swift in Sources */,
 				797CD35327103537005CD514 /* MapViewController.swift in Sources */,
