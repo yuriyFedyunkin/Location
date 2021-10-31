@@ -9,5 +9,8 @@ target 'Location' do
 pod 'GoogleMaps'
 pod 'RealmSwift'
 pod 'SnapKit'
+pod 'RxSwift'
+pod 'RxCocoa'
+pod 'RxRelay'
 
 end

@@ -7,18 +7,6 @@
 
 import UIKit
 
-protocol RegistrationRouter: BaseRouter {
-    func showEmptyAlert()
-}
+protocol RegistrationRouter: BaseRouter {}
 
-final class RegistrationRouterImpl: BaseRouterImpl, RegistrationRouter {
-    func showEmptyAlert() {
-        let ac = UIAlertController(
-            title: "Ошибка",
-            message: "Все поля должны быть заполнены",
-            preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ок", style: .cancel)
-        ac.addAction(action)
-        present(ac)
-    }
-}
+final class RegistrationRouterImpl: BaseRouterImpl, RegistrationRouter {}
