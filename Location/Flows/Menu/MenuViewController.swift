@@ -11,6 +11,7 @@ final class MenuViewController: UIViewController {
     
     var viewModel: MenuViewModel!
 
+    private let shadowView = ShadowView()
     private let takeSelfieButton = BaseButton()
     private let showMapButton = BaseButton()
     private let avatarView = AvatarView()
@@ -28,13 +29,19 @@ final class MenuViewController: UIViewController {
         view.backgroundColor = .secondarySystemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         title = appearance.title
-        
-        avatarView.layer.cornerRadius = appearance.avatarSize.height / 2
-        view.addSubview(avatarView)
-        avatarView.snp.makeConstraints { make in
+                
+        view.addSubview(shadowView)
+        shadowView.snp.makeConstraints { make in
             make.top.equalTo(view.snp.topMargin).inset(appearance.topInset)
             make.centerX.equalToSuperview()
             make.size.equalTo(appearance.avatarSize)
+        }
+        
+        avatarView.layer.cornerRadius = appearance.avatarSize.height / 2
+        avatarView.clipsToBounds = true
+        shadowView.addSubview(avatarView)
+        avatarView.snp.makeConstraints { make in
+            make.size.equalToSuperview()
         }
         
         takeSelfieButton.setTitle(appearance.selfieButtonTitle, for: .normal)
@@ -43,7 +50,7 @@ final class MenuViewController: UIViewController {
         view.addSubview(takeSelfieButton)
         takeSelfieButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(avatarView.snp.bottom).inset(-appearance.inset)
+            make.top.equalTo(shadowView.snp.bottom).inset(-appearance.inset)
             make.size.equalTo(appearance.buttonSize)
         }
         
@@ -59,6 +66,17 @@ final class MenuViewController: UIViewController {
     }
     
     private func setupBindings() {
+        viewModel.selfieOutput
+            .skip(1)
+            .drive(onNext: { [weak self] image in
+                self?.avatarView.setAvatar(with: image)
+            })
+            .disposed(by: disposeBag)
+        
+        takeSelfieButton.rx.tap
+            .bind(to: viewModel.didTapSelfieButton)
+            .disposed(by: disposeBag)
+        
         showMapButton.rx.tap
             .bind(to: viewModel.didTapShowMap)
             .disposed(by: disposeBag)
@@ -73,7 +91,7 @@ extension MenuViewController {
         let topInset: CGFloat = 32
         let inset: CGFloat = 24
         let buttonSize = CGSize(width: 200, height: 40)
-        let avatarSize = CGSize(width: 200, height: 200)
+        let avatarSize = CGSize(width: 300, height: 300)
     }
 }
 

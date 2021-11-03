@@ -9,6 +9,7 @@ import UIKit
 
 final class AvatarView: UIView {
     
+    private let shadowView = UIView()
     private let defaultImageView = UIImageView()
     private let avatarImageView = UIImageView()
     
@@ -25,13 +26,8 @@ final class AvatarView: UIView {
     
     private func setupViews() {
         backgroundColor = .white
-        
-        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderColor = UIColor.gray.cgColor
         layer.borderWidth = 2
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.7
-        layer.shadowOffset = .zero
-        layer.shadowRadius = 10
         
         defaultImageView.image = appearance.defaultImage
         defaultImageView.tintColor = .darkGray
@@ -51,10 +47,7 @@ final class AvatarView: UIView {
     }
     
     func setAvatar(with image: UIImage?) {
-        DispatchQueue.main.async {
-            self.avatarImageView.image = image
-            self.setNeedsDisplay()
-        }
+        avatarImageView.image = image
     }
 }
 

@@ -35,6 +35,7 @@
 		79DB8D392733222E00896E2B /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D382733222E00896E2B /* MenuViewModel.swift */; };
 		79DB8D3B273322D800896E2B /* MenuModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3A273322D800896E2B /* MenuModuleBuilder.swift */; };
 		79DB8D3E2733266400896E2B /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3D2733266400896E2B /* AvatarView.swift */; };
+		79DB8D4027334E5A00896E2B /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3F27334E5A00896E2B /* ShadowView.swift */; };
 		79DECBF1272F14F40086185F /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DECBF0272F14F40086185F /* UserNotificationService.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		79DB8D382733222E00896E2B /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		79DB8D3A273322D800896E2B /* MenuModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModuleBuilder.swift; sourceTree = "<group>"; };
 		79DB8D3D2733266400896E2B /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		79DB8D3F27334E5A00896E2B /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		79DECBF0272F14F40086185F /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
 		D913475B797B00890269AA45 /* Pods-Location.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location.debug.xcconfig"; path = "Target Support Files/Pods-Location/Pods-Location.debug.xcconfig"; sourceTree = "<group>"; };
 		DB366FA1BBC089C50FCFEB41 /* Pods_Location.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				79519FAC272096C7006B2F00 /* BaseButton.swift */,
+				79DB8D3F27334E5A00896E2B /* ShadowView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				797CD34F27103537005CD514 /* AppDelegate.swift in Sources */,
 				797CD35127103537005CD514 /* SceneDelegate.swift in Sources */,
 				79DB8D3327331E0400896E2B /* MenuViewController.swift in Sources */,
+				79DB8D4027334E5A00896E2B /* ShadowView.swift in Sources */,
 				79DB8D3727331E3400896E2B /* MenuRouter.swift in Sources */,
 				79B426D1271E13450026E257 /* BlockViewController.swift in Sources */,
 				793DC934271C60D000640FA2 /* UsersDB.swift in Sources */,
