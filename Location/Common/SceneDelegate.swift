@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
  
     var window: UIWindow?
     private var lastViewController: UIViewController?
+    private let userNotificationCenter: UserNotificationService = UserNotificationServiceImpl()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
@@ -49,6 +50,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let blockVC = BlockViewController()
         lastViewController = window?.rootViewController
         window?.rootViewController = blockVC
+        
+        sendTestNotification()
+    }
+}
+
+// MARK: - Notification exapmple
+extension SceneDelegate {
+    
+    private func sendTestNotification() {
+        userNotificationCenter.sendNotificatioRequest(
+            content: makeNotificationContent(),
+            trigger: makeIntervalNotificatioTrigger())
+    }
+    
+    private func makeNotificationContent() -> UNNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = "Вернись в приложение"
+        content.subtitle = "Оно клевое"
+        content.body = "Я скучаю"
+        content.badge = 1
+        
+        return content
+    }
+    
+    private func makeIntervalNotificatioTrigger() -> UNNotificationTrigger {
+        UNTimeIntervalNotificationTrigger(
+            timeInterval: 10,
+            repeats: false
+        )
     }
 }
 
