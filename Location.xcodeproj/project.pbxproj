@@ -29,6 +29,11 @@
 		797CD3582710353A005CD514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797CD3572710353A005CD514 /* Assets.xcassets */; };
 		797CD35B2710353A005CD514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797CD3592710353A005CD514 /* LaunchScreen.storyboard */; };
 		79B426D1271E13450026E257 /* BlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B426D0271E13450026E257 /* BlockViewController.swift */; };
+		79DB8D3327331E0400896E2B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3227331E0300896E2B /* MenuViewController.swift */; };
+		79DB8D3527331E1900896E2B /* MenuPresentableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3427331E1900896E2B /* MenuPresentableRouter.swift */; };
+		79DB8D3727331E3400896E2B /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3627331E3400896E2B /* MenuRouter.swift */; };
+		79DB8D392733222E00896E2B /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D382733222E00896E2B /* MenuViewModel.swift */; };
+		79DB8D3B273322D800896E2B /* MenuModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3A273322D800896E2B /* MenuModuleBuilder.swift */; };
 		79DECBF1272F14F40086185F /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DECBF0272F14F40086185F /* UserNotificationService.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +62,11 @@
 		797CD35A2710353A005CD514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		797CD35C2710353A005CD514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79B426D0271E13450026E257 /* BlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockViewController.swift; sourceTree = "<group>"; };
+		79DB8D3227331E0300896E2B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		79DB8D3427331E1900896E2B /* MenuPresentableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresentableRouter.swift; sourceTree = "<group>"; };
+		79DB8D3627331E3400896E2B /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		79DB8D382733222E00896E2B /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		79DB8D3A273322D800896E2B /* MenuModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModuleBuilder.swift; sourceTree = "<group>"; };
 		79DECBF0272F14F40086185F /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
 		D913475B797B00890269AA45 /* Pods-Location.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location.debug.xcconfig"; path = "Target Support Files/Pods-Location/Pods-Location.debug.xcconfig"; sourceTree = "<group>"; };
 		DB366FA1BBC089C50FCFEB41 /* Pods_Location.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +97,7 @@
 			children = (
 				793DC938271C6B8900640FA2 /* Login */,
 				793DC945271C842400640FA2 /* Registration */,
+				79DB8D3127331DE900896E2B /* Menu */,
 				793DC950271C8ADB00640FA2 /* Map */,
 			);
 			path = Flows;
@@ -208,6 +219,18 @@
 				793DC957271C936300640FA2 /* Resources */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		79DB8D3127331DE900896E2B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				79DB8D3227331E0300896E2B /* MenuViewController.swift */,
+				79DB8D382733222E00896E2B /* MenuViewModel.swift */,
+				79DB8D3627331E3400896E2B /* MenuRouter.swift */,
+				79DB8D3A273322D800896E2B /* MenuModuleBuilder.swift */,
+				79DB8D3427331E1900896E2B /* MenuPresentableRouter.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		ED18A1938A92CE9F3185C34C /* Pods */ = {
@@ -353,11 +376,14 @@
 			files = (
 				793DC931271C607A00640FA2 /* LoginViewController.swift in Sources */,
 				79DECBF1272F14F40086185F /* UserNotificationService.swift in Sources */,
+				79DB8D3B273322D800896E2B /* MenuModuleBuilder.swift in Sources */,
 				793DC94F271C856500640FA2 /* RegistrationPresentableRouter.swift in Sources */,
+				79DB8D392733222E00896E2B /* MenuViewModel.swift in Sources */,
 				793DC949271C845400640FA2 /* RegistrationViewModel.swift in Sources */,
 				793DC942271C7BF700640FA2 /* BaseRouter.swift in Sources */,
 				793DC93F271C7A1300640FA2 /* LoginModuleBuilder.swift in Sources */,
 				79519FAD272096C7006B2F00 /* BaseButton.swift in Sources */,
+				79DB8D3527331E1900896E2B /* MenuPresentableRouter.swift in Sources */,
 				793DC93F271C7A1300640FA2 /* LoginModuleBuilder.swift in Sources */,
 				793DC947271C844600640FA2 /* RegistrationViewController.swift in Sources */,
 				793DC94D271C847500640FA2 /* RegistrationRouter.swift in Sources */,
@@ -366,6 +392,8 @@
 				793DC952271C8B0300640FA2 /* MapPresentableRouter.swift in Sources */,
 				797CD34F27103537005CD514 /* AppDelegate.swift in Sources */,
 				797CD35127103537005CD514 /* SceneDelegate.swift in Sources */,
+				79DB8D3327331E0400896E2B /* MenuViewController.swift in Sources */,
+				79DB8D3727331E3400896E2B /* MenuRouter.swift in Sources */,
 				79B426D1271E13450026E257 /* BlockViewController.swift in Sources */,
 				793DC934271C60D000640FA2 /* UsersDB.swift in Sources */,
 				793DC944271C7D0400640FA2 /* LoginRouter.swift in Sources */,

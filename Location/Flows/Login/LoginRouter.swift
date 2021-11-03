@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol LoginRouter: RegistrationPresentableRouter, MapPresentableRouter {
+protocol LoginRouter: RegistrationPresentableRouter, MenuPresentableRouter {
     func showAlert(_ alert: LoginRouterImpl.LoginAlert)
 }
 

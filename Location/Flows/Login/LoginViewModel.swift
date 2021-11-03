@@ -34,7 +34,7 @@ final class LoginViewModelImpl: NSObject, LoginViewModel {
                binding: { vm, input in
             if let user = vm.dataBase.read(login: input.login),
                input.password == user.password {
-                vm.router.showMap()
+                vm.router.showMenu()
             } else {
                 vm.router.showAlert(.loginError)
             }
