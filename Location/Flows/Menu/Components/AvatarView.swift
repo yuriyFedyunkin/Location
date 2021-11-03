@@ -42,7 +42,8 @@ final class AvatarView: UIView {
             make.center.equalToSuperview()
         }
         
-        avatarImageView.contentMode = .scaleAspectFill
+        avatarImageView.contentMode = .scaleAspectFit
+        avatarImageView.clipsToBounds = true
         addSubview(avatarImageView)
         avatarImageView.snp.makeConstraints { make in
             make.size.equalToSuperview()

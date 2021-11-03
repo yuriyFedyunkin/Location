@@ -14,11 +14,6 @@ protocol MapPresentableRouter: BaseRouter {
 
 extension MapPresentableRouter {
     func showMap() {
-        let vc = MapViewController()
-        let nc = UINavigationController(rootViewController: vc)
-        nc.modalTransitionStyle = .crossDissolve
-        nc.modalPresentationStyle = .overFullScreen
-        
-        present(nc)
+        show(viewController: MapViewController())
     }
 }

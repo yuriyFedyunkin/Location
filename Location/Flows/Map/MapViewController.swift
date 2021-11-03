@@ -120,7 +120,7 @@ final class MapViewController: UIViewController {
     }
     
     private func exitMap() {
-        navigationController?.dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
 

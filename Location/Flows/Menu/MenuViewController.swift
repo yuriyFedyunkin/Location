@@ -5,7 +5,7 @@
 //  Created by Yuriy Fedyunkin on 03.11.2021.
 //
 
-import UIKit
+import RxSwift
 
 final class MenuViewController: UIViewController {
     
@@ -15,11 +15,13 @@ final class MenuViewController: UIViewController {
     private let showMapButton = BaseButton()
     private let avatarView = AvatarView()
     
+    private let disposeBag = DisposeBag()
     private let appearance = Appearance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupBindings()
     }
     
     private func setupViews() {
@@ -54,6 +56,12 @@ final class MenuViewController: UIViewController {
             make.top.equalTo(takeSelfieButton.snp.bottom).inset(-appearance.inset)
             make.size.equalTo(appearance.buttonSize)
         }
+    }
+    
+    private func setupBindings() {
+        showMapButton.rx.tap
+            .bind(to: viewModel.didTapShowMap)
+            .disposed(by: disposeBag)
     }
 }
 
