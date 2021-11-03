@@ -11,7 +11,10 @@ final class MenuViewController: UIViewController {
     
     var viewModel: MenuViewModel!
 
+    private let takeSelfieButton = BaseButton()
     private let showMapButton = BaseButton()
+    private let avatarView = AvatarView()
+    
     private let appearance = Appearance()
     
     override func viewDidLoad() {
@@ -24,12 +27,31 @@ final class MenuViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = appearance.title
         
+        avatarView.layer.cornerRadius = appearance.avatarSize.height / 2
+        view.addSubview(avatarView)
+        avatarView.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.topMargin).inset(appearance.topInset)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(appearance.avatarSize)
+        }
+        
+        takeSelfieButton.setTitle(appearance.selfieButtonTitle, for: .normal)
+        takeSelfieButton.layer.cornerRadius = appearance.buttonSize.height / 2
+        takeSelfieButton.backgroundColor = .black
+        view.addSubview(takeSelfieButton)
+        takeSelfieButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(avatarView.snp.bottom).inset(-appearance.inset)
+            make.size.equalTo(appearance.buttonSize)
+        }
+        
         showMapButton.setTitle(appearance.mapButtonTitle, for: .normal)
         showMapButton.layer.cornerRadius = appearance.buttonSize.height / 2
         showMapButton.backgroundColor = .black
         view.addSubview(showMapButton)
         showMapButton.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.top.equalTo(takeSelfieButton.snp.bottom).inset(-appearance.inset)
             make.size.equalTo(appearance.buttonSize)
         }
     }
@@ -38,8 +60,12 @@ final class MenuViewController: UIViewController {
 extension MenuViewController {
     struct Appearance {
         let title = "Меню"
+        let selfieButtonTitle = "Сделать селфи"
         let mapButtonTitle = "Карта"
-        let buttonSize = CGSize(width: 150, height: 40)
+        let topInset: CGFloat = 32
+        let inset: CGFloat = 24
+        let buttonSize = CGSize(width: 200, height: 40)
+        let avatarSize = CGSize(width: 200, height: 200)
     }
 }
 

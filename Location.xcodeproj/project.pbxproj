@@ -34,6 +34,7 @@
 		79DB8D3727331E3400896E2B /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3627331E3400896E2B /* MenuRouter.swift */; };
 		79DB8D392733222E00896E2B /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D382733222E00896E2B /* MenuViewModel.swift */; };
 		79DB8D3B273322D800896E2B /* MenuModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3A273322D800896E2B /* MenuModuleBuilder.swift */; };
+		79DB8D3E2733266400896E2B /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3D2733266400896E2B /* AvatarView.swift */; };
 		79DECBF1272F14F40086185F /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DECBF0272F14F40086185F /* UserNotificationService.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		79DB8D3627331E3400896E2B /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		79DB8D382733222E00896E2B /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		79DB8D3A273322D800896E2B /* MenuModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModuleBuilder.swift; sourceTree = "<group>"; };
+		79DB8D3D2733266400896E2B /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		79DECBF0272F14F40086185F /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
 		D913475B797B00890269AA45 /* Pods-Location.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location.debug.xcconfig"; path = "Target Support Files/Pods-Location/Pods-Location.debug.xcconfig"; sourceTree = "<group>"; };
 		DB366FA1BBC089C50FCFEB41 /* Pods_Location.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,8 +231,17 @@
 				79DB8D3627331E3400896E2B /* MenuRouter.swift */,
 				79DB8D3A273322D800896E2B /* MenuModuleBuilder.swift */,
 				79DB8D3427331E1900896E2B /* MenuPresentableRouter.swift */,
+				79DB8D3C2733264A00896E2B /* Components */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		79DB8D3C2733264A00896E2B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				79DB8D3D2733266400896E2B /* AvatarView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		ED18A1938A92CE9F3185C34C /* Pods */ = {
@@ -381,6 +392,7 @@
 				79DB8D392733222E00896E2B /* MenuViewModel.swift in Sources */,
 				793DC949271C845400640FA2 /* RegistrationViewModel.swift in Sources */,
 				793DC942271C7BF700640FA2 /* BaseRouter.swift in Sources */,
+				79DB8D3E2733266400896E2B /* AvatarView.swift in Sources */,
 				793DC93F271C7A1300640FA2 /* LoginModuleBuilder.swift in Sources */,
 				79519FAD272096C7006B2F00 /* BaseButton.swift in Sources */,
 				79DB8D3527331E1900896E2B /* MenuPresentableRouter.swift in Sources */,
