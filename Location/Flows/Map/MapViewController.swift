@@ -17,6 +17,7 @@ final class MapViewController: UIViewController {
     private var route: GMSPolyline?
     private var path: GMSMutablePath?
     private var locationManager: LocationManager = LocationManagerImpl()
+    private let avatarManager: AvatarManager = AvatarManagerImpl()
     private let trackButton = UIBarButtonItem(
         title: "Start Track",
         style: .done, target: self,

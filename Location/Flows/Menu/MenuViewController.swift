@@ -67,7 +67,6 @@ final class MenuViewController: UIViewController {
     
     private func setupBindings() {
         viewModel.selfieOutput
-            .skip(1)
             .drive(onNext: { [weak self] image in
                 self?.avatarView.setAvatar(with: image)
             })

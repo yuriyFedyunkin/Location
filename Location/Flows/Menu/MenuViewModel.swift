@@ -37,10 +37,17 @@ final class MenuViewModelImpl: NSObject, MenuViewModel {
     }
      
     // MARK: Local properties
+    private let avatarManager: AvatarManager
     private let disposeBag = DisposeBag()
     
-    init(router: MenuRouter) {
+    init(
+        router: MenuRouter,
+        avatarManager: AvatarManager = AvatarManagerImpl()
+    ) {
         self.router = router
+        self.avatarManager = avatarManager
+        
+        _selfieOutput.accept(avatarManager.readAvatarImage())
     }
     
     private func showCamera() {
@@ -67,11 +74,13 @@ extension MenuViewModelImpl: UIImagePickerControllerDelegate, UINavigationContro
     private func extractImage(from info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.editedImage] as? UIImage {
             _selfieOutput.accept(image)
+            avatarManager.saveAvatarImage(image)
             return
         }
         
         if let image = info[.originalImage] as? UIImage {
             _selfieOutput.accept(image)
+            avatarManager.saveAvatarImage(image)
             return
         }
         

@@ -36,6 +36,8 @@
 		79DB8D3B273322D800896E2B /* MenuModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3A273322D800896E2B /* MenuModuleBuilder.swift */; };
 		79DB8D3E2733266400896E2B /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3D2733266400896E2B /* AvatarView.swift */; };
 		79DB8D4027334E5A00896E2B /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D3F27334E5A00896E2B /* ShadowView.swift */; };
+		79DB8D422733535200896E2B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D412733535200896E2B /* Constants.swift */; };
+		79DB8D442733578200896E2B /* AvatarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB8D432733578200896E2B /* AvatarManager.swift */; };
 		79DECBF1272F14F40086185F /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DECBF0272F14F40086185F /* UserNotificationService.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		79DB8D3A273322D800896E2B /* MenuModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModuleBuilder.swift; sourceTree = "<group>"; };
 		79DB8D3D2733266400896E2B /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		79DB8D3F27334E5A00896E2B /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		79DB8D412733535200896E2B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		79DB8D432733578200896E2B /* AvatarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarManager.swift; sourceTree = "<group>"; };
 		79DECBF0272F14F40086185F /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
 		D913475B797B00890269AA45 /* Pods-Location.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location.debug.xcconfig"; path = "Target Support Files/Pods-Location/Pods-Location.debug.xcconfig"; sourceTree = "<group>"; };
 		DB366FA1BBC089C50FCFEB41 /* Pods_Location.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +129,7 @@
 				793DC933271C60D000640FA2 /* UsersDB.swift */,
 				79519FAE2720A0AA006B2F00 /* LocationManager.swift */,
 				79DECBF0272F14F40086185F /* UserNotificationService.swift */,
+				79DB8D432733578200896E2B /* AvatarManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				793DC941271C7BF700640FA2 /* BaseRouter.swift */,
+				79DB8D412733535200896E2B /* Constants.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -393,8 +399,10 @@
 				79DB8D3B273322D800896E2B /* MenuModuleBuilder.swift in Sources */,
 				793DC94F271C856500640FA2 /* RegistrationPresentableRouter.swift in Sources */,
 				79DB8D392733222E00896E2B /* MenuViewModel.swift in Sources */,
+				79DB8D422733535200896E2B /* Constants.swift in Sources */,
 				793DC949271C845400640FA2 /* RegistrationViewModel.swift in Sources */,
 				793DC942271C7BF700640FA2 /* BaseRouter.swift in Sources */,
+				79DB8D442733578200896E2B /* AvatarManager.swift in Sources */,
 				79DB8D3E2733266400896E2B /* AvatarView.swift in Sources */,
 				793DC93F271C7A1300640FA2 /* LoginModuleBuilder.swift in Sources */,
 				79519FAD272096C7006B2F00 /* BaseButton.swift in Sources */,
