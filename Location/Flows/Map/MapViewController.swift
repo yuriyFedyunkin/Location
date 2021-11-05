@@ -13,10 +13,17 @@ import RxCocoa
 
 final class MapViewController: UIViewController {
 
+    // MARK: GoogleMaps
     private let mapView = GMSMapView()
     private var route: GMSPolyline?
     private var path: GMSMutablePath?
+    private let marker = GMSMarker()
+    
+    // MARK: Helpers
     private var locationManager: LocationManager = LocationManagerImpl()
+    private let avatarManager: AvatarManager = AvatarManagerImpl()
+    
+    private let avtarIcon = UIImageView()
     private let trackButton = UIBarButtonItem(
         title: "Start Track",
         style: .done, target: self,
@@ -38,10 +45,22 @@ final class MapViewController: UIViewController {
     }
     
     private func setupViews() {
-        view.addSubview(mapView)
-        mapView.frame = view.bounds
         navigationItem.rightBarButtonItem = trackButton
         navigationItem.leftBarButtonItem = exitButton
+        
+        view.addSubview(mapView)
+        mapView.frame = view.bounds
+
+        avtarIcon.frame.size = CGSize(width: 48, height: 48)
+        avtarIcon.contentMode = .scaleAspectFit
+        avtarIcon.layer.cornerRadius = avtarIcon.frame.size.height / 2
+        avtarIcon.layer.borderWidth = 1
+        avtarIcon.layer.borderColor = UIColor.green.cgColor
+        avtarIcon.clipsToBounds = true
+        avtarIcon.image = avatarManager.readAvatarImage()
+        
+        marker.iconView = avtarIcon
+        marker.map = mapView
     }
     
     private func setupBindings() {
@@ -55,7 +74,10 @@ final class MapViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(
                 with: self,
-                onNext: { $0.updateRoute(location: $1) })
+                onNext: {
+                    $0.updateRoute(location: $1)
+                    $0.marker.position = $1
+                })
             .disposed(by: disposeBag)
         
         trackButton.rx.tap
@@ -120,44 +142,6 @@ final class MapViewController: UIViewController {
     }
     
     private func exitMap() {
-        navigationController?.dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
-
-
-// TODO: Delete
-/*
- На основе задания предыдущего урока.
-
- 1. Настроить слежение за перемещением в фоне.
-
- 2. Добавить кнопки «Начать новый трек» и «Закончить трек».
-
- 3. При нажатии на «Начать новый трек»:
- a. Запускается слежение.
- b. Создаётся новая линия на карте или заменяется предыдущая.
- c. При получении новой точки она добавляется в маршрут.
- 
- 4. Добавить в приложение базу данных Realm.
-
- 5. При нажатии на «Закончить трек»:
-
- a. Завершается слежение.
- b. Все точки маршрута сохраняются в базу данных.
- c. Прежде чем сохранить точки из базы, необходимо удалить предыдущие точки.
- 6. Добавить кнопку «Отобразить предыдущий маршрут».
-
- 7. При нажатии на «Отобразить предыдущий маршрут».
-
- a. Если в данный момент происходит слежение, то появляется уведомление о том, что сначала необходимо остановить слежение. С кнопкой «ОК», при нажатии на которую останавливается слежение, как если бы пользователь нажал на «Закончить трек».
- b. Загружаются точки из базы.
- c. На основе загруженных точек строится маршрут.
- d. Фокус на карте устанавливается таким образом, чтобы был виден весь маршрут.
- P.S. В документации к картам можно найти методы и свойства, которые помогут вам:
-
- 1. Остановить слежение.
-
- 2. Получить все точки из объекта GMSMutablePath.
-
- 3. Установить фокус карты точно так, чтобы она отображала маршрут, описанный объектом GMSMutablePath.
- */
